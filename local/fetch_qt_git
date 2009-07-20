@@ -1,0 +1,12 @@
+#!/usr/bin/ruby
+require 'fileutils'
+
+qt_src_dirs= []
+qt_src_dirs << "/devel/SRC/QT_SRC/qt"
+qt_src_dirs << "/devel/SRC/QT_SRC/kinetic"
+
+qt_src_dirs.each { |d|
+  puts d
+  FileUtils.cd d
+  puts `git fetch`
+}

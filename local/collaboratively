@@ -1,0 +1,9 @@
+#!/bin/sh
+# ~/bin/collaboratively
+# Typical usage: collaboratively make check
+PATH=/usr/lib/ccache:/usr/lib/icecc/bin$(echo :$PATH | sed -e s@:/usr/lib/ccache@@g)
+export PATH
+MAKEFLAGS='-j -l3'
+export MAKEFLAGS
+exec "$@"
+
