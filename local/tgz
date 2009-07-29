@@ -1,0 +1,2 @@
+#!/bin/bash -x
+tar -xzf $1`date +%Y%m%d_%T`.tgz $1

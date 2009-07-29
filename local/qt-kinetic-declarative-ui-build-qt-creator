@@ -1,0 +1,8 @@
+#!/bin/bash       
+SOURCE_DIRECTORY=/devel/SRC/QT_SRC/qt-creator
+BUILD_DIRECTORY=/devel/BIN/qt-kinetic-declarative-ui-release-qt-creator
+QMAKE=qt-kinetic-declarative-ui-qmake                  
+mkdir -p $BUILD_DIRECTORY
+cd $BUILD_DIRECTORY
+$QMAKE $SOURCE_DIRECTORY/qtcreator.pro
+collaboratively make
