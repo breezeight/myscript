@@ -1,0 +1,29 @@
+#!/usr/bin/ruby
+# Simple script to chroot in a rootfs. First it check is it's a lsb root-fs (More can be done with these check). Then it mount proc and umount on exit
+# TODO Give some feedback on the shell to that you are working in a chroot env
+# TODO Do more check mount
+
+require 'fileutils'
+
+ROOTFSDIR=ARGV[0]
+
+def is_root_fs?
+  begin
+    FileUtils.cd ROOTFSDIR
+    if !File.exist?('etc/lsb-release') then
+      raise SintaxError, "Bad dir"
+    end
+  rescue
+    puts "Not LSB root fs"
+  end
+end
+
+is_root_fs?
+
+PROCDIR=ROOTFSDIR+"/proc"
+
+puts "Entering CHROOT environment..."
+puts `sudo mount -t proc proc #{PROCDIR}`
+`sudo chroot #{ROOTFSDIR}`
+`sudo umount #{PROCDIR}`
+puts "Exiting CHROOT environment"
