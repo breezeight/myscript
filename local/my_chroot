@@ -24,8 +24,10 @@ is_root_fs?
 
 PROCDIR=ROOTFSDIR+"/proc"
 
+
 puts "Entering CHROOT environment..."
-puts `sudo mount -t proc proc #{PROCDIR}`
-`sudo chroot #{ROOTFSDIR}`
+`sudo mount -t proc proc #{PROCDIR}`
+`sudo cp /etc/resolv.conf #{ROOTFSDIR+"/etc/resolv.conf"}`
+Kernel.system("sudo chroot #{ROOTFSDIR} /bin/bash")
 `sudo umount #{PROCDIR}`
 puts "Exiting CHROOT environment"
