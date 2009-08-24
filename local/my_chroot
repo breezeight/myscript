@@ -5,7 +5,9 @@
 
 require 'fileutils'
 
-ROOTFSDIR=ARGV[0]
+puts ARGV[0]
+ROOTFSDIR=File.expand_path(ARGV[0])
+puts ROOTFSDIR
 
 def is_root_fs?
   begin
