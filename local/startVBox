@@ -1,0 +1,6 @@
+#!/usr/bin/ruby
+`/etc/init.d/vboxdrv start`
+puts ARGV[0]
+
+puts `VBoxManage startvm #{ARGV[0]}`
+

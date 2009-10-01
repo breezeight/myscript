@@ -7,6 +7,7 @@ DESTDIR="/usr/local/bin"
 prog_list = []
 prog_list << "collaboratively"
 prog_list << "my_chroot"
+prog_list << "startVBox"
 
 
 
