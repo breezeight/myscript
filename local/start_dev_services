@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo /etc/init.d/mysql start
+sudo /etc/init.d/vboxdrv start
+sudo /etc/init.d/apache2 start

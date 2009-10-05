@@ -8,7 +8,7 @@ prog_list = []
 prog_list << "collaboratively"
 prog_list << "my_chroot"
 prog_list << "startVBox"
-
+prog_list << "start_dev_services"
 
 
 FileUtils.cd "local"
